@@ -1,13 +1,13 @@
 import "./styles.css";
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+// document.getElementById("app").innerHTML = `
+// <h1>Hello Vanilla!</h1>
+// <div>
+//   We use the same configuration as Parcel to bundle this sandbox, you can find more
+//   info about Parcel
+//   <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+// </div>
+// `;
 
 // 分割代入
 // const mypro = {
@@ -55,11 +55,37 @@ const arr7 = [...arr4, ...arr5];
 
 const namearr = ["yamada", "tanaka", "tani"];
 // for (let i = 0; i < namearr.length; i++) {
-//   console.log(namearr[i])
+//   console.log(`${i + 1}番目は${namearr[i]}です`)
 // }
-namearr.map((name) => console.log(name));
+
+// namearr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+
+const newnamearr = namearr.map((name) => {
+  if (name === "tani") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newnamearr);
 
 // const namearr2 = namearr.map((name) => {
 //   return name
 // })
 // console.log(namearr2)
+
+// const numarr = [1,2,3,4,5]
+// const newnumarr = numarr.filter((num) => {
+//   return num % 2 === 1
+// })
+// console.log(newnumarr)
+
+// || は左側がfalseなら右側を返す
+const num = 100;
+const fee = num || "金額未設定";
+console.log(fee);
+
+// && は左側がtrueなら右側を返す
+const numm2 = 100;
+const feee2 = numm2 && "なにか設定されましたか";
+console.log(feee2);
